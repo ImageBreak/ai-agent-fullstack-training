@@ -1,0 +1,13 @@
+{
+  "model": "deepseek-v4-flash",
+  "messages": [],
+  "max_tokens": 256,
+  "gateway_prompt": {
+    "id": "meeting-summary",
+    "version": 1,
+    "variables": {
+      "format": "三条行动项",
+      "transcript": "周五前完成 API 设计，周末补齐验证脚本，下周一安排评审。"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "meeting-summary",
+  "name": "会议总结",
+  "role": "user",
+  "content": "请将以下内容总结为 {{ format }}：\n{{ transcript }}",
+  "activate": true
+}

@@ -1,0 +1,397 @@
+{
+  "generated_at": "2026-08-29T02:32:52.484909+00:00",
+  "suite_passed": true,
+  "acceptance_complete": true,
+  "scope": "Mock, local HTTP and real models",
+  "groups": {
+    "routing": {
+      "status": "PASS",
+      "cases": 2,
+      "passed": 2
+    },
+    "streaming": {
+      "status": "PASS",
+      "cases": 9,
+      "passed": 9
+    },
+    "structured": {
+      "status": "PASS",
+      "cases": 6,
+      "passed": 6
+    },
+    "prompts": {
+      "status": "PASS",
+      "cases": 3,
+      "passed": 3
+    },
+    "observability": {
+      "status": "PASS",
+      "cases": 4,
+      "passed": 4
+    },
+    "resilience": {
+      "status": "PASS",
+      "cases": 7,
+      "passed": 7
+    },
+    "limits": {
+      "status": "PASS",
+      "cases": 4,
+      "passed": 4
+    },
+    "security": {
+      "status": "PASS",
+      "cases": 2,
+      "passed": 2
+    },
+    "live": {
+      "status": "PASS",
+      "cases": 6,
+      "passed": 6
+    }
+  },
+  "tests": [
+    {
+      "test": "tests/integration/test_gateway.py::test_models_route_and_record[deepseek-v4-pro]",
+      "groups": [
+        "routing",
+        "observability"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_models_route_and_record[deepseek-v4-flash]",
+      "groups": [
+        "routing",
+        "observability"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_stream_events_and_usage[deepseek-v4-pro]",
+      "groups": [
+        "streaming"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_stream_events_and_usage[deepseek-v4-flash]",
+      "groups": [
+        "streaming"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_retries_then_success",
+      "groups": [
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_auth_failure_not_retried",
+      "groups": [
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_structured_native_mapping[deepseek-v4-pro]",
+      "groups": [
+        "structured"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_structured_native_mapping[deepseek-v4-flash]",
+      "groups": [
+        "structured"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_repair_shared_budget",
+      "groups": [
+        "structured",
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_no_fourth_call",
+      "groups": [
+        "structured",
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_after_delta_failure_no_retry",
+      "groups": [
+        "streaming",
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_model_buckets_independent",
+      "groups": [
+        "limits"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_prompt_versions_roles_and_concurrent_publish",
+      "groups": [
+        "prompts"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_auth_validation_and_request_ids",
+      "groups": [
+        "security"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_recording_failures_do_not_call_twice",
+      "groups": [
+        "observability"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_stream_before_delta_can_retry",
+      "groups": [
+        "streaming",
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_invalid_structured_stream_is_error_without_repair",
+      "groups": [
+        "streaming",
+        "structured"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_body_and_output_limits",
+      "groups": [
+        "limits"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/integration/test_gateway.py::test_missing_active_version_and_variables",
+      "groups": [
+        "prompts"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/live/test_models.py::test_real_model[text-deepseek-v4-pro]",
+      "groups": [
+        "live"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "request_id": "req_39584ba4372748aeb6afa5e3558e761a",
+        "model_alias": "deepseek-v4-pro",
+        "adapter_type": "chat_completions",
+        "status": "success",
+        "total_tokens": 20,
+        "total_latency_ms": 983.9999999999236,
+        "ttft_ms": null,
+        "created_at": "2026-08-29T02:32:47.022471+00:00"
+      }
+    },
+    {
+      "test": "tests/live/test_models.py::test_real_model[text-deepseek-v4-flash]",
+      "groups": [
+        "live"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "request_id": "req_e6ba8ab59c5f40f0a749908351fa4ce9",
+        "model_alias": "deepseek-v4-flash",
+        "adapter_type": "responses",
+        "status": "success",
+        "total_tokens": 20,
+        "total_latency_ms": 717.9999999999609,
+        "ttft_ms": null,
+        "created_at": "2026-08-29T02:32:48.036205+00:00"
+      }
+    },
+    {
+      "test": "tests/live/test_models.py::test_real_model[stream-deepseek-v4-pro]",
+      "groups": [
+        "live"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "request_id": "req_c830d2f5130145c7861d0e1ae08e9bcf",
+        "model_alias": "deepseek-v4-pro",
+        "adapter_type": "chat_completions",
+        "status": "success",
+        "total_tokens": 20,
+        "total_latency_ms": 625.0,
+        "ttft_ms": 421.0000000000491,
+        "created_at": "2026-08-29T02:32:48.777705+00:00"
+      }
+    },
+    {
+      "test": "tests/live/test_models.py::test_real_model[stream-deepseek-v4-flash]",
+      "groups": [
+        "live"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "request_id": "req_0ba3c7244eb3495d921cb881e8e29ac8",
+        "model_alias": "deepseek-v4-flash",
+        "adapter_type": "responses",
+        "status": "success",
+        "total_tokens": 20,
+        "total_latency_ms": 577.9999999999745,
+        "ttft_ms": 469.00000000005093,
+        "created_at": "2026-08-29T02:32:49.440282+00:00"
+      }
+    },
+    {
+      "test": "tests/live/test_models.py::test_real_model[json-deepseek-v4-pro]",
+      "groups": [
+        "live"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "request_id": "req_a4ef04d5726043bc826291af2d9ad978",
+        "model_alias": "deepseek-v4-pro",
+        "adapter_type": "chat_completions",
+        "status": "success",
+        "total_tokens": 84,
+        "total_latency_ms": 967.9999999999609,
+        "ttft_ms": null,
+        "created_at": "2026-08-29T02:32:50.032598+00:00"
+      }
+    },
+    {
+      "test": "tests/live/test_models.py::test_real_model[json-deepseek-v4-flash]",
+      "groups": [
+        "live"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "request_id": "req_1e8dc80a4eaa4190a2655cc5962741fe",
+        "model_alias": "deepseek-v4-flash",
+        "adapter_type": "responses",
+        "status": "success",
+        "total_tokens": 75,
+        "total_latency_ms": 360.00000000001364,
+        "ttft_ms": null,
+        "created_at": "2026-08-29T02:32:51.040378+00:00"
+      }
+    },
+    {
+      "test": "tests/streaming/test_local_http.py::test_first_delta_before_upstream_finishes_and_cancel[False]",
+      "groups": [
+        "streaming"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/streaming/test_local_http.py::test_first_delta_before_upstream_finishes_and_cancel[True]",
+      "groups": [
+        "streaming"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_policies.py::test_atomic_rate_and_concurrency",
+      "groups": [
+        "limits"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_policies.py::test_backoff_budget_and_retry_after",
+      "groups": [
+        "resilience"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_policies.py::test_render_strict_and_sandbox",
+      "groups": [
+        "prompts"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_policies.py::test_schema_and_json_rules",
+      "groups": [
+        "structured"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_policies.py::test_usage_partial_and_subsets",
+      "groups": [
+        "observability"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_policies.py::test_missing_key_rejected",
+      "groups": [
+        "security"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_sse_parser.py::test_utf8_multiline_and_network_fragments",
+      "groups": [
+        "streaming"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    },
+    {
+      "test": "tests/unit/test_sse_parser.py::test_bounded_event_and_unterminated_json",
+      "groups": [
+        "streaming",
+        "limits"
+      ],
+      "status": "PASS",
+      "evidence": {}
+    }
+  ]
+}

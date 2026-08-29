@@ -1,0 +1,46 @@
+database_path: data/gateway.db
+docs_enabled: true
+retry:
+  max_upstream_calls: 3
+  max_structured_repairs: 1
+  base_delay_seconds: 0.25
+  jitter_seconds: 0.1
+timeouts:
+  connect_timeout_seconds: 10
+  read_idle_timeout_seconds: 60
+  request_timeout_seconds: 120
+  cleanup_timeout_seconds: 2
+limits:
+  max_request_bytes: 1048576
+  max_template_bytes: 65536
+  max_variables_bytes: 262144
+  max_rendered_prompt_bytes: 524288
+  max_schema_bytes: 32768
+  max_schema_depth: 16
+  max_json_depth: 32
+  max_structured_output_bytes: 1048576
+  max_upstream_response_bytes: 2097152
+  max_sse_event_bytes: 262144
+  default_max_tokens: 1024
+  max_output_tokens: 4096
+models:
+  deepseek-v4-pro:
+    adapter: chat_completions
+    base_url: ${DEEPSEEK_PRO_BASE_URL}
+    api_key: ${DEEPSEEK_PRO_API_KEY}
+    upstream_model: deepseek-v4-pro
+    thinking_enabled: false
+    reasoning_effort: high
+    requests_per_minute: 10
+    burst: 2
+    max_concurrency: 2
+  deepseek-v4-flash:
+    adapter: responses
+    base_url: ${DEEPSEEK_FLASH_BASE_URL}
+    api_key: ${DEEPSEEK_FLASH_API_KEY}
+    upstream_model: deepseek-v4-flash
+    thinking_enabled: false
+    reasoning_effort: high
+    requests_per_minute: 30
+    burst: 5
+    max_concurrency: 5
