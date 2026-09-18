@@ -1,0 +1,17 @@
+[project]
+name = "week02-transfer-tool"
+version = "0.1.0"
+description = "Week 02 governed transfer-tool homework"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.9,<3",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3,<10",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]

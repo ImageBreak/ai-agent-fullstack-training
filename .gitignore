@@ -2,3 +2,10 @@ ex_ctx/*
 .DS_Store
 docs/
 node_modules/
+
+# Python / pytest / uv runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.uv-cache/
+.venv/
